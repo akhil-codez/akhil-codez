@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/30166353/README.md)
+[README.md](https://github.com/user-attachments/files/30166485/README.md)
 <div align="center">
 
   <!-- Banners Dark/Light Switching -->
@@ -33,14 +33,13 @@
 
   <br/><br/>
 
- <!-- Projects Widget-->
-<!--<h2>Projects</h2>-->
+    <!-- Projects Widget -->
+  <!--<h2>Projects</h2>-->
   <a href="https://github.com/akhil-codez?tab=repositories">
     <img src="projects.svg?v=2" width="90%" alt="Projects" />
   </a>
 
   <br/><br/>
-
 
   <!-- Connect -->
   <h2>Connect</h2>
@@ -56,6 +55,7 @@
   </p>
 
   <br/>
+
 
 
   <!-- Contribution Snake Dark/Light Switching -->
