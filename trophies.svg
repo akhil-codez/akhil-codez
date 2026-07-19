@@ -1,110 +1,236 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" width="600" height="230">
   <defs>
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#e23636"/>
-      <stop offset="100%" stop-color="#1b3f8b"/>
+      <stop offset="50%" stop-color="#1b3f8b"/>
+      <stop offset="100%" stop-color="#e23636"/>
     </linearGradient>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f4c542"/>
-      <stop offset="100%" stop-color="#d4a317"/>
+    <linearGradient id="goldMedal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe066"/>
+      <stop offset="40%" stop-color="#f4c542"/>
+      <stop offset="100%" stop-color="#c8960c"/>
     </linearGradient>
-    <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="silverMedal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8e8f0"/>
+      <stop offset="40%" stop-color="#c0c8d4"/>
+      <stop offset="100%" stop-color="#8a95a5"/>
+    </linearGradient>
+    <linearGradient id="bronzeMedal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0c8a0"/>
+      <stop offset="40%" stop-color="#d4945a"/>
+      <stop offset="100%" stop-color="#a06030"/>
+    </linearGradient>
+    <linearGradient id="ringGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4d4d" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3b5bab" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="statFill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e23636"/>
+      <stop offset="100%" stop-color="#3b5bab"/>
+    </linearGradient>
+    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.25"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
-    
-    <!-- Trophy graphic symbol -->
-    <g id="trophy-shape">
-      <!-- Cup -->
-      <path d="M -12 -12 L 12 -12 L 10 2 C 10 7, 5 12, 0 12 C -5 12, -10 7, -10 2 Z" fill="url(#goldGrad)"/>
-      <!-- Handles -->
-      <path d="M -12 -10 C -17 -10, -17 -2, -10 0" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
-      <path d="M 12 -10 C 17 -10, 17 -2, 10 0" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
-      <!-- Stand -->
-      <path d="M -2 12 L 2 12 L 4 18 L -4 18 Z" fill="url(#goldGrad)"/>
-      <rect x="-10" y="18" width="20" height="6" rx="1" fill="#1b3f8b"/>
-    </g>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+
+    <clipPath id="cardClip">
+      <rect x="3" y="3" width="594" height="224" rx="12"/>
+    </clipPath>
   </defs>
 
   <style>
-    .card-bg { fill: #0a0e17; stroke: url(#borderGrad); stroke-width: 1.5; }
-    .title { fill: #ff4d4d; font-family: sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.5; }
-    .web-corner { stroke: #e23636; stroke-width: 0.8; opacity: 0.2; fill: none; }
-    
-    .trophy-box { fill: #0d131f; stroke: #1b3f8b; stroke-width: 1; }
-    .t-title { fill: #f5f5f5; font-family: sans-serif; font-weight: bold; font-size: 11px; text-anchor: middle; }
-    .t-desc { fill: #ff4d4d; font-family: sans-serif; font-weight: bold; font-size: 9px; text-anchor: middle; }
-    .t-rank { fill: #f4c542; font-family: sans-serif; font-weight: 900; font-size: 14px; text-anchor: middle; }
+    .card-bg { fill: #0a0e17; stroke: url(#cardBorder); stroke-width: 2; }
+    .title { fill: #ff4d4d; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 3px; }
+    .web-line { stroke: #e23636; stroke-width: 0.6; opacity: 0.12; fill: none; }
+    .cell-bg { fill: #0d131f; stroke: #1b3f8b; stroke-width: 1; }
+    .cell-title { fill: #f5f5f5; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 11px; text-anchor: middle; }
+    .cell-desc { fill: #8892b0; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500; font-size: 8.5px; text-anchor: middle; }
+    .cell-percent { fill: #f4c542; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 900; font-size: 16px; text-anchor: middle; }
+    .cell-label { fill: #555; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 600; font-size: 7px; text-anchor: middle; letter-spacing: 1px; }
 
-    /* Pop animations */
-    .trophy-cell {
+    .cell-wrap {
+      transform-box: fill-box;
       transform-origin: center;
-      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+      animation: popCard 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     }
-    @keyframes popIn {
-      0% { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    
-    /* Thwip starburst animation */
-    .thwip {
-      animation: thwipFX 0.4s ease-out both;
-      transform-origin: center;
-    }
-    @keyframes thwipFX {
-      0% { transform: scale(0); opacity: 0; }
-      50% { transform: scale(1.3); opacity: 1; }
-      100% { transform: scale(1.6); opacity: 0; }
+    .cell-wrap.c1 { animation-delay: 0.15s; }
+    .cell-wrap.c2 { animation-delay: 0.35s; }
+    .cell-wrap.c3 { animation-delay: 0.55s; }
+
+    @keyframes popCard {
+      0% { transform: scale(0.6) translateY(20px); opacity: 0; }
+      60% { transform: scale(1.08) translateY(-2px); opacity: 1; }
+      80% { transform: scale(0.97); }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
     }
 
-    .shine {
-      animation: shine 3s ease-in-out infinite;
+    .ring-progress {
+      fill: none;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: center;
     }
-    @keyframes shine {
-      0% { transform: translateX(-100px) translateY(-100px) rotate(45deg); }
-      30%, 100% { transform: translateX(150px) translateY(150px) rotate(45deg); }
+    .ring-bg { stroke: #1a1a2e; stroke-width: 5; }
+    .ring-fill {
+      stroke-width: 5;
+      stroke-dasharray: var(--pct, 0 1000);
+      animation: fillRing 1.5s ease-out both;
     }
+    .ring-fill.r1 { stroke: url(#goldMedal); --pct: 169.6 1000; }
+    .ring-fill.r2 { stroke: url(#silverMedal); --pct: 138.2 1000; }
+    .ring-fill.r3 { stroke: url(#bronzeMedal); --pct: 106.8 1000; }
+
+    @keyframes fillRing {
+      0% { stroke-dasharray: 0 1000; }
+    }
+
+    .shine-sweep {
+      animation: shineMove 5s ease-in-out infinite;
+    }
+    @keyframes shineMove {
+      0%, 15% { transform: translateX(-80px) translateY(-80px); opacity: 0; }
+      35% { opacity: 0.35; }
+      55%, 100% { transform: translateX(150px) translateY(150px); opacity: 0; }
+    }
+
+    .glow-pulse {
+      animation: pulseGlow 3s ease-in-out infinite alternate;
+    }
+    @keyframes pulseGlow {
+      0% { opacity: 0.5; }
+      100% { opacity: 0.9; }
+    }
+
+    .star-twinkle {
+      animation: twinkle 2s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.3; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.1); }
+    }
+    .star-twinkle:nth-child(2) { animation-delay: 0.7s; }
+    .star-twinkle:nth-child(3) { animation-delay: 1.4s; }
   </style>
 
-  <!-- Card Background -->
-  <rect class="card-bg" x="2" y="2" width="446" height="196" rx="10"/>
+  <!-- Card body -->
+  <rect class="card-bg" x="3" y="3" width="594" height="224" rx="12" filter="url(#dropShadow)"/>
 
-  <!-- Web doodles in corners -->
-  <path class="web-corner" d="M 2 2 L 0 50 M 2 2 L 50 0 M 2 2 L 35 35 M 448 2 L 448 50 M 448 2 L 398 0 M 448 2 L 413 35 M 2 198 L 0 148 M 2 198 L 50 200 M 2 198 L 35 163 M 448 198 L 448 148 M 448 198 L 398 200 M 448 198 L 413 163"/>
+  <!-- Halftone dots background -->
+  <g clip-path="url(#cardClip)" opacity="0.035">
+    <pattern id="dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="0.7" fill="#f5f5f5"/>
+    </pattern>
+    <rect width="600" height="230" fill="url(#dots)"/>
+  </g>
+
+  <!-- Web corner decorations -->
+  <g clip-path="url(#cardClip)" class="web-line">
+    <line x1="3" y1="3" x2="3" y2="60"/>
+    <line x1="3" y1="3" x2="60" y2="3"/>
+    <line x1="3" y1="3" x2="48" y2="45"/>
+    <line x1="3" y1="3" x2="15" y2="52"/>
+    <line x1="3" y1="3" x2="52" y2="15"/>
+    <path d="M 3 25 Q 20 20 35 12" class="web-line"/>
+    <path d="M 25 3 Q 20 20 12 35" class="web-line"/>
+
+    <line x1="597" y1="3" x2="597" y2="60"/>
+    <line x1="597" y1="3" x2="540" y2="3"/>
+    <line x1="597" y1="3" x2="552" y2="45"/>
+    <line x1="597" y1="3" x2="585" y2="52"/>
+    <line x1="597" y1="3" x2="548" y2="15"/>
+    <path d="M 597 25 Q 580 20 565 12" class="web-line"/>
+    <path d="M 575 3 Q 580 20 588 35" class="web-line"/>
+
+    <line x1="3" y1="227" x2="3" y2="170"/>
+    <line x1="3" y1="227" x2="60" y2="227"/>
+    <line x1="3" y1="227" x2="48" y2="185"/>
+    <line x1="3" y1="227" x2="15" y2="178"/>
+    <path d="M 3 205 Q 20 210 35 218" class="web-line"/>
+
+    <line x1="597" y1="227" x2="597" y2="170"/>
+    <line x1="597" y1="227" x2="540" y2="227"/>
+    <line x1="597" y1="227" x2="552" y2="185"/>
+    <line x1="597" y1="227" x2="585" y2="178"/>
+    <path d="M 597 205 Q 580 210 565 218" class="web-line"/>
+  </g>
 
   <!-- Title -->
-  <text x="30" y="35" class="title">TROPHY VAULT</text>
+  <text x="300" y="28" class="title" text-anchor="middle" filter="url(#glow)">ACHIEVEMENTS</text>
 
-  <!-- Trophy 1: Commits -->
-  <g class="trophy-cell" style="animation-delay: 0.2s;" transform="translate(30, 50)">
-    <rect class="trophy-box" x="0" y="0" width="110" height="120" rx="8"/>
-    <!-- Trophy graphic -->
-    <use href="#trophy-shape" x="55" y="45"/>
-    <text x="55" y="85" class="t-title">Super-Committer</text>
-    <text x="55" y="100" class="t-desc">1,000+ Commits</text>
-    <text x="55" y="112" class="t-rank">RANK A+</text>
-    <!-- Thwip burst effect overlay -->
-    <path class="thwip" d="M 55 45 L 57 25 L 60 45 L 80 47 L 60 50 L 57 70 L 54 50 L 34 47 Z" fill="#ff4d4d" style="animation-delay: 0.6s;"/>
+  <!-- Decorative lines flanking title -->
+  <line x1="30" y1="22" x2="170" y2="22" stroke="#e23636" stroke-width="0.8" opacity="0.25"/>
+  <line x1="430" y1="22" x2="570" y2="22" stroke="#e23636" stroke-width="0.8" opacity="0.25"/>
+  <circle cx="300" cy="22" r="2.5" fill="#e23636" opacity="0.4"/>
+
+  <!-- ===== CARD 1: Code Warrior ===== -->
+  <g transform="translate(22, 48)">
+    <g class="cell-wrap c1">
+      <rect class="cell-bg" x="0" y="0" width="175" height="165" rx="10" filter="url(#dropShadow)"/>
+      <circle cx="87" cy="48" r="30" class="ring-bg"/>
+      <circle cx="87" cy="48" r="30" class="ring-progress ring-fill r1"/>
+      <circle cx="87" cy="48" r="30" fill="none" stroke="url(#ringGlow)" stroke-width="7" class="glow-pulse"/>
+      <text x="87" y="53" class="cell-percent">85%</text>
+      <g transform="translate(87, 10)">
+        <polygon points="0,-8 2,-3 7,-3 3,1 5,6 0,3 -5,6 -3,1 -7,-3 -2,-3" fill="url(#goldMedal)" class="star-twinkle"/>
+      </g>
+      <text x="87" y="100" class="cell-title">Code Warrior</text>
+      <text x="87" y="114" class="cell-desc">500+ Commits Streak</text>
+      <text x="87" y="126" class="cell-desc">Consistent Contribution</text>
+      <rect x="-10" y="0" width="30" height="200" rx="15" fill="url(#shineGrad)" class="shine-sweep" opacity="0"/>
+      <rect x="0" y="155" width="175" height="10" rx="0 0 10 10" fill="url(#statFill)" opacity="0.6"/>
+    </g>
   </g>
 
-  <!-- Trophy 2: PRs -->
-  <g class="trophy-cell" style="animation-delay: 0.4s;" transform="translate(170, 50)">
-    <rect class="trophy-box" x="0" y="0" width="110" height="120" rx="8"/>
-    <use href="#trophy-shape" x="55" y="45"/>
-    <text x="55" y="85" class="t-title">PR Master</text>
-    <text x="55" y="100" class="t-desc">Open Source Contrib</text>
-    <text x="55" y="112" class="t-rank">RANK S</text>
-    <path class="thwip" d="M 55 45 L 57 25 L 60 45 L 80 47 L 60 50 L 57 70 L 54 50 L 34 47 Z" fill="#ff4d4d" style="animation-delay: 0.8s;"/>
+  <!-- ===== CARD 2: Open Source Hero ===== -->
+  <g transform="translate(212, 48)">
+    <g class="cell-wrap c2">
+      <rect class="cell-bg" x="0" y="0" width="175" height="165" rx="10" filter="url(#dropShadow)"/>
+      <circle cx="87" cy="48" r="30" class="ring-bg"/>
+      <circle cx="87" cy="48" r="30" class="ring-progress ring-fill r2"/>
+      <circle cx="87" cy="48" r="30" fill="none" stroke="url(#ringGlow)" stroke-width="7" class="glow-pulse" style="animation-delay:0.3s"/>
+      <text x="87" y="53" class="cell-percent">70%</text>
+      <g transform="translate(87, 10)">
+        <polygon points="0,-8 2,-3 7,-3 3,1 5,6 0,3 -5,6 -3,1 -7,-3 -2,-3" fill="url(#silverMedal)" class="star-twinkle" style="animation-delay:0.7s"/>
+      </g>
+      <text x="87" y="100" class="cell-title">Open Source Hero</text>
+      <text x="87" y="114" class="cell-desc">12 PRs Merged</text>
+      <text x="87" y="126" class="cell-desc">Active Collaboration</text>
+      <rect x="-10" y="0" width="30" height="200" rx="15" fill="url(#shineGrad)" class="shine-sweep" opacity="0" style="animation-delay:1.5s"/>
+      <rect x="0" y="155" width="175" height="10" rx="0 0 10 10" fill="url(#statFill)" opacity="0.6"/>
+    </g>
   </g>
 
-  <!-- Trophy 3: Star-Gazer -->
-  <g class="trophy-cell" style="animation-delay: 0.6s;" transform="translate(310, 50)">
-    <rect class="trophy-box" x="0" y="0" width="110" height="120" rx="8"/>
-    <use href="#trophy-shape" x="55" y="45"/>
-    <text x="55" y="85" class="t-title">Friendly Dev</text>
-    <text x="55" y="100" class="t-desc">High Engagement</text>
-    <text x="55" y="112" class="t-rank">RANK A</text>
-    <path class="thwip" d="M 55 45 L 57 25 L 60 45 L 80 47 L 60 50 L 57 70 L 54 50 L 34 47 Z" fill="#ff4d4d" style="animation-delay: 1.0s;"/>
+  <!-- ===== CARD 3: Bug Hunter ===== -->
+  <g transform="translate(402, 48)">
+    <g class="cell-wrap c3">
+      <rect class="cell-bg" x="0" y="0" width="175" height="165" rx="10" filter="url(#dropShadow)"/>
+      <circle cx="87" cy="48" r="30" class="ring-bg"/>
+      <circle cx="87" cy="48" r="30" class="ring-progress ring-fill r3"/>
+      <circle cx="87" cy="48" r="30" fill="none" stroke="url(#ringGlow)" stroke-width="7" class="glow-pulse" style="animation-delay:0.6s"/>
+      <text x="87" y="53" class="cell-percent">55%</text>
+      <g transform="translate(87, 10)">
+        <polygon points="0,-8 2,-3 7,-3 3,1 5,6 0,3 -5,6 -3,1 -7,-3 -2,-3" fill="url(#bronzeMedal)" class="star-twinkle" style="animation-delay:1.4s"/>
+      </g>
+      <text x="87" y="100" class="cell-title">Bug Hunter</text>
+      <text x="87" y="114" class="cell-desc">Issue Crusher</text>
+      <text x="87" y="126" class="cell-desc">Quality Champion</text>
+      <rect x="-10" y="0" width="30" height="200" rx="15" fill="url(#shineGrad)" class="shine-sweep" opacity="0" style="animation-delay:3s"/>
+      <rect x="0" y="155" width="175" height="10" rx="0 0 10 10" fill="url(#statFill)" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- Bottom bar - total XP -->
+  <g transform="translate(30, 218)">
+    <rect x="0" y="-12" width="540" height="1" fill="#1b3f8b" opacity="0.3"/>
+    <text x="270" y="0" fill="#555" font-family="'Segoe UI', Arial, sans-serif" font-weight="600" font-size="7px" text-anchor="middle" letter-spacing="2">TOTAL XP UNLOCKED — LEVEL 7</text>
   </g>
 </svg>
