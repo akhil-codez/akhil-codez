@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
+  <defs>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e23636"/>
+      <stop offset="100%" stop-color="#1b3f8b"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .card-bg { fill: #0a0e17; stroke: url(#borderGrad); stroke-width: 1.5; }
+    .title { fill: #ff4d4d; font-family: sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.5; }
+    .label { fill: #f5f5f5; font-family: sans-serif; font-weight: bold; font-size: 13px; }
+    .percent { fill: #f5f5f5; font-family: monospace; font-weight: bold; font-size: 12px; }
+    .web-corner { stroke: #e23636; stroke-width: 0.8; opacity: 0.2; fill: none; }
+    
+    /* Animations */
+    .bar-grow {
+      animation: barGrow 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+    @keyframes barGrow {
+      0% { width: 0; }
+    }
+  </style>
+
+  <!-- Card Background -->
+  <rect class="card-bg" x="2" y="2" width="446" height="196" rx="10"/>
+
+  <!-- Web doodles in corners -->
+  <path class="web-corner" d="M 2 2 L 0 50 M 2 2 L 50 0 M 2 2 L 35 35 M 448 2 L 448 50 M 448 2 L 398 0 M 448 2 L 413 35 M 2 198 L 0 148 M 2 198 L 50 200 M 2 198 L 35 163 M 448 198 L 448 148 M 448 198 L 398 200 M 448 198 L 413 163"/>
+
+  <!-- Title -->
+  <text x="30" y="35" class="title">CODENAMES (LANGUAGES)</text>
+
+  <!-- Language Rows -->
+  <!-- Python (60%) -->
+  <g transform="translate(40, 50)">
+    <text x="0" y="12" class="label">Python 🐍</text>
+    <text x="370" y="12" class="percent" text-anchor="end">60%</text>
+    <rect x="0" y="20" width="370" height="8" rx="4" fill="#1b3f8b" opacity="0.2"/>
+    <rect class="bar-grow" x="0" y="20" width="222" height="8" rx="4" fill="#e23636" style="animation-delay: 0.1s;"/>
+  </g>
+  
+  <!-- Java (20%) -->
+  <g transform="translate(40, 95)">
+    <text x="0" y="12" class="label">Java ☕</text>
+    <text x="370" y="12" class="percent" text-anchor="end">20%</text>
+    <rect x="0" y="20" width="370" height="8" rx="4" fill="#1b3f8b" opacity="0.2"/>
+    <rect class="bar-grow" x="0" y="20" width="74" height="8" rx="4" fill="#1b3f8b" style="animation-delay: 0.2s;"/>
+  </g>
+
+  <!-- JS & Web (20%) -->
+  <g transform="translate(40, 140)">
+    <text x="0" y="12" class="label">JavaScript &amp; Web ⚡</text>
+    <text x="370" y="12" class="percent" text-anchor="end">20%</text>
+    <rect x="0" y="20" width="370" height="8" rx="4" fill="#1b3f8b" opacity="0.2"/>
+    <rect class="bar-grow" x="0" y="20" width="74" height="8" rx="4" fill="#f4c542" style="animation-delay: 0.3s;"/>
+  </g>
+</svg>
