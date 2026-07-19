@@ -33,6 +33,15 @@
 
   <br/><br/>
 
+    <!-- Projects Widget -->
+<!--  <h2>Projects</h2> -->
+  <a href="https://github.com/akhil-codez?tab=repositories">
+    <img src="projects.svg?v=2" width="90%" alt="Projects" />
+  </a>
+
+  <br/><br/>
+
+
   <!-- Connect -->
   <h2>Connect</h2>
   
@@ -48,13 +57,6 @@
 
   <br/>
 
-  <!-- Projects Widget -->
-  <h2>Projects</h2>
-  <a href="https://github.com/akhil-codez?tab=repositories">
-    <img src="projects.svg?v=2" width="90%" alt="Projects" />
-  </a>
-
-  <br/><br/>
 
   <!-- Contribution Snake Dark/Light Switching -->
   <h2>Contribution Map</h2>
