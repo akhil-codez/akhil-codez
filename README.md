@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/30166584/README.md)
+[README.md](https://github.com/user-attachments/files/30166485/README.md)
 <div align="center">
 
   <!-- Banners Dark/Light Switching -->
@@ -33,6 +33,14 @@
 
   <br/><br/>
 
+  <!-- Projects Widget -->
+  <!--<h2>Projects</h2>-->
+  <a href="https://github.com/akhil-codez?tab=repositories">
+    <img src="projects.svg?v=2" width="90%" alt="Projects" />
+  </a>
+
+  <br/><br/>
+
   <!-- Connect -->
   <h2>Connect</h2>
   
@@ -48,36 +56,15 @@
 
   <br/>
 
-  <!-- Projects Widget -->
-  <h2>Projects</h2>
-  <a href="https://github.com/akhil-codez?tab=repositories">
-    <img src="projects.svg?v=2" width="90%" alt="Projects" />
-  </a>
 
-  <br/><br/>
 
   <!-- Contribution Snake Dark/Light Switching -->
   <h2>Contribution Map</h2>
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/akhil-codez/akhil-codez/output/github-snake-dark.svg?v=1" width="90%" alt="Contribution Map" />
-  </p>
-
-  <br/>
-
-  <!-- Spider decoration above counter -->
-  <p align="center">
-    <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
-      <line x1="50" y1="0" x2="50" y2="20" stroke="#e23636" stroke-width="0.6" opacity="0.4"/>
-      <ellipse cx="50" cy="27" rx="4" ry="2.5" fill="#e23636"/>
-      <circle cx="50" cy="22" r="2" fill="#e23636"/>
-      <path d="M47 25 Q44 22 42 25" fill="none" stroke="#e23636" stroke-width="0.7" stroke-linecap="round"/>
-      <path d="M47 26 Q44 25 42 28" fill="none" stroke="#e23636" stroke-width="0.7" stroke-linecap="round"/>
-      <path d="M47 27 Q44 28 42 31" fill="none" stroke="#e23636" stroke-width="0.7" stroke-linecap="round"/>
-      <path d="M53 25 Q56 22 58 25" fill="none" stroke="#e23636" stroke-width="0.7" stroke-linecap="round"/>
-      <path d="M53 26 Q56 25 58 28" fill="none" stroke="#e23636" stroke-width="0.7" stroke-linecap="round"/>
-      <path d="M53 27 Q56 28 58 31" fill="none" stroke="#e23636" stroke-width="0.7" stroke-linecap="round"/>
-    </svg>
-  </p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/akhil-codez/akhil-codez/output/github-snake-dark.svg?v=1" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/akhil-codez/akhil-codez/output/github-snake-light.svg?v=1" />
+    <img alt="Contribution Snake" src="https://raw.githubusercontent.com/akhil-codez/akhil-codez/output/github-snake-dark.svg?v=1" width="90%" />
+  </picture>
 
   <br/><br/>
 
