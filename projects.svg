@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="720" height="240">
+  <defs>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e23636"/>
+      <stop offset="50%" stop-color="#1b3f8b"/>
+      <stop offset="100%" stop-color="#e23636"/>
+    </linearGradient>
+    <linearGradient id="tsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3178c6"/>
+      <stop offset="100%" stop-color="#235a97"/>
+    </linearGradient>
+    <linearGradient id="pyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#306998"/>
+      <stop offset="50%" stop-color="#ffd43b"/>
+      <stop offset="100%" stop-color="#306998"/>
+    </linearGradient>
+    <linearGradient id="jupyterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f37726"/>
+      <stop offset="100%" stop-color="#b3581b"/>
+    </linearGradient>
+    <linearGradient id="jsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7df1e"/>
+      <stop offset="100%" stop-color="#b8a41a"/>
+    </linearGradient>
+    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="spiderGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="cardClip">
+      <rect x="3" y="3" width="714" height="234" rx="12"/>
+    </clipPath>
+
+    <g id="link-icon">
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="none" stroke="#e23636" stroke-width="1.2"/>
+      <line x1="5" y1="2" x2="10" y2="2" stroke="#e23636" stroke-width="1.2"/>
+      <line x1="10" y1="2" x2="10" y2="7" stroke="#e23636" stroke-width="1.2"/>
+    </g>
+
+    <g id="spider-icon">
+      <ellipse cx="0" cy="0" rx="3.5" ry="2.5" fill="#e23636"/>
+      <circle cx="0" cy="-4" r="2" fill="#e23636"/>
+      <path d="M -3 -2 Q -6 -6 -8 -3" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M -3 -1 Q -7 -3 -9 0" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M -3 0 Q -7 0 -8 3" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M -2 1 Q -5 3 -6 5" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M 3 -2 Q 6 -6 8 -3" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M 3 -1 Q 7 -3 9 0" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M 3 0 Q 7 0 8 3" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M 2 1 Q 5 3 6 5" fill="none" stroke="#e23636" stroke-width="0.8" stroke-linecap="round"/>
+      <ellipse cx="0" cy="0" rx="1.5" ry="1" fill="#ff4d4d" opacity="0.5"/>
+    </g>
+
+    <pattern id="webPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <line x1="30" y1="0" x2="30" y2="60" stroke="#e23636" stroke-width="0.3" opacity="0.06"/>
+      <line x1="0" y1="30" x2="60" y2="30" stroke="#e23636" stroke-width="0.3" opacity="0.06"/>
+      <line x1="0" y1="0" x2="60" y2="60" stroke="#e23636" stroke-width="0.3" opacity="0.04"/>
+      <line x1="60" y1="0" x2="0" y2="60" stroke="#1b3f8b" stroke-width="0.3" opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .card-bg { fill: #0a0e17; stroke: url(#cardBorder); stroke-width: 2; }
+    .title { fill: #ff4d4d; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 3px; }
+    .web-line { stroke: #e23636; stroke-width: 0.6; opacity: 0.12; fill: none; }
+
+    .p-cell-bg { fill: #0d131f; stroke: #1b3f8b; stroke-width: 1; }
+    .p-name { fill: #f5f5f5; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 10px; text-anchor: middle; }
+    .p-desc { fill: #8892b0; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500; font-size: 7.5px; text-anchor: middle; }
+    .p-badge-text { fill: #f5f5f5; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 7px; text-anchor: middle; letter-spacing: 0.5px; }
+    .p-lang-text { fill: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 14px; text-anchor: middle; }
+
+    .web-strand { stroke: #e23636; stroke-width: 0.7; fill: none; opacity: 0.2; }
+
+    .cell-wrap {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: popIn 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    .cell-wrap.c1 { animation-delay: 0.1s; }
+    .cell-wrap.c2 { animation-delay: 0.2s; }
+    .cell-wrap.c3 { animation-delay: 0.3s; }
+    .cell-wrap.c4 { animation-delay: 0.4s; }
+
+    @keyframes popIn {
+      0%   { transform: scale(0.5) translateY(15px); opacity: 0; }
+      60%  { transform: scale(1.06) translateY(-2px); opacity: 1; }
+      80%  { transform: scale(0.97); }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    .shine-sweep {
+      animation: shineMove 5s ease-in-out infinite;
+    }
+    @keyframes shineMove {
+      0%, 15% { transform: translateX(-60px) translateY(-60px); opacity: 0; }
+      35% { opacity: 0.3; }
+      55%, 100% { transform: translateX(120px) translateY(120px); opacity: 0; }
+    }
+
+    .spider-dangle {
+      transform-origin: 680px 10px;
+      animation: dangle 4s ease-in-out infinite alternate;
+    }
+    @keyframes dangle {
+      0%   { transform: rotate(-4deg); }
+      50%  { transform: rotate(4deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    .spider-pulse {
+      animation: pulse 3s ease-in-out infinite alternate;
+    }
+    @keyframes pulse {
+      0%   { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+  </style>
+
+  <rect class="card-bg" x="3" y="3" width="714" height="234" rx="12" filter="url(#dropShadow)"/>
+
+  <!-- Web grid pattern -->
+  <g clip-path="url(#cardClip)">
+    <rect width="720" height="240" fill="url(#webPattern)"/>
+  </g>
+
+  <g clip-path="url(#cardClip)" opacity="0.035">
+    <pattern id="dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="0.7" fill="#f5f5f5"/>
+    </pattern>
+    <rect width="720" height="240" fill="url(#dots)"/>
+  </g>
+
+  <!-- Spider web strands between cards -->
+  <g clip-path="url(#cardClip)">
+    <path class="web-strand" d="M 200 30 Q 210 50 205 70"/>
+    <path class="web-strand" d="M 202 32 Q 215 52 208 72"/>
+    <path class="web-strand" d="M 348 30 Q 338 50 343 70"/>
+    <path class="web-strand" d="M 346 32 Q 335 52 340 72"/>
+    <path class="web-strand" d="M 496 30 Q 506 50 501 70"/>
+    <path class="web-strand" d="M 498 32 Q 511 52 504 72"/>
+  </g>
+
+  <!-- Web corners (heavier) -->
+  <g clip-path="url(#cardClip)" class="web-line">
+    <line x1="3" y1="3" x2="3" y2="65"/>
+    <line x1="3" y1="3" x2="65" y2="3"/>
+    <line x1="3" y1="3" x2="50" y2="48"/>
+    <line x1="3" y1="3" x2="15" y2="56"/>
+    <line x1="3" y1="3" x2="56" y2="15"/>
+    <path d="M 3 28 Q 22 22 38 14"/>
+    <path d="M 28 3 Q 22 22 14 38"/>
+    <path d="M 3 15 Q 25 30 20 50" stroke-width="0.4"/>
+    <path d="M 15 3 Q 30 25 50 20" stroke-width="0.4"/>
+
+    <line x1="717" y1="3" x2="717" y2="65"/>
+    <line x1="717" y1="3" x2="655" y2="3"/>
+    <line x1="717" y1="3" x2="670" y2="48"/>
+    <line x1="717" y1="3" x2="705" y2="56"/>
+    <line x1="717" y1="3" x2="664" y2="15"/>
+    <path d="M 717 28 Q 698 22 682 14"/>
+    <path d="M 692 3 Q 698 22 706 38"/>
+    <path d="M 717 15 Q 695 30 700 50" stroke-width="0.4"/>
+    <path d="M 705 3 Q 690 25 670 20" stroke-width="0.4"/>
+
+    <line x1="3" y1="237" x2="3" y2="175"/>
+    <line x1="3" y1="237" x2="65" y2="237"/>
+    <line x1="3" y1="237" x2="50" y2="192"/>
+    <path d="M 3 212 Q 22 218 38 226"/>
+    <path d="M 3 225 Q 25 210 20 190" stroke-width="0.4"/>
+
+    <line x1="717" y1="237" x2="717" y2="175"/>
+    <line x1="717" y1="237" x2="655" y2="237"/>
+    <line x1="717" y1="237" x2="670" y2="192"/>
+    <path d="M 717 212 Q 698 218 682 226"/>
+    <path d="M 717 225 Q 695 210 700 190" stroke-width="0.4"/>
+  </g>
+
+  <!-- Hanging spider -->
+  <g class="spider-dangle">
+    <line x1="680" y1="10" x2="680" y2="55" stroke="#e23636" stroke-width="0.5" opacity="0.3"/>
+    <use href="#spider-icon" x="680" y="55" filter="url(#spiderGlow)" class="spider-pulse"/>
+  </g>
+
+  <!-- Title -->
+  <text x="360" y="28" class="title" text-anchor="middle" filter="url(#glow)">PROJECTS</text>
+  <line x1="30" y1="22" x2="235" y2="22" stroke="#e23636" stroke-width="0.8" opacity="0.2"/>
+  <line x1="485" y1="22" x2="690" y2="22" stroke="#e23636" stroke-width="0.8" opacity="0.2"/>
+  <circle cx="360" cy="22" r="2.5" fill="#e23636" opacity="0.4"/>
+
+  <!-- ===== PROJECT 1: MalluPrompter (TypeScript) ===== -->
+  <g transform="translate(74, 50)">
+    <g class="cell-wrap c1">
+      <rect class="p-cell-bg" x="0" y="0" width="128" height="170" rx="10" filter="url(#dropShadow)"/>
+      <circle cx="64" cy="35" r="22" fill="url(#tsGrad)"/>
+      <text x="64" y="40" class="p-lang-text">TS</text>
+      <text x="64" y="78" class="p-name">MalluPrompter</text>
+      <rect x="22" y="87" width="84" height="16" rx="8" fill="#1b3f8b" opacity="0.6"/>
+      <text x="64" y="98" class="p-badge-text">TypeScript</text>
+      <text x="64" y="120" class="p-desc">Prompt engineering tool</text>
+      <text x="64" y="132" class="p-desc">deployed on Vercel</text>
+      <use href="#link-icon" x="58" y="148" filter="url(#glow)"/>
+      <rect x="-8" y="0" width="25" height="200" rx="12" fill="url(#shineGrad)" class="shine-sweep" opacity="0"/>
+      <rect x="0" y="160" width="128" height="10" rx="0 0 10 10" fill="url(#tsGrad)" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- ===== PROJECT 2: PS Agent (Python) ===== -->
+  <g transform="translate(222, 50)">
+    <g class="cell-wrap c2">
+      <rect class="p-cell-bg" x="0" y="0" width="128" height="170" rx="10" filter="url(#dropShadow)"/>
+      <circle cx="64" cy="35" r="22" fill="url(#pyGrad)"/>
+      <text x="64" y="40" class="p-lang-text">Py</text>
+      <text x="64" y="78" class="p-name">PS Agent</text>
+      <rect x="22" y="87" width="84" height="16" rx="8" fill="#306998" opacity="0.6"/>
+      <text x="64" y="98" class="p-badge-text">Python</text>
+      <text x="64" y="120" class="p-desc">AI agent for problem</text>
+      <text x="64" y="132" class="p-desc">solving on Vercel</text>
+      <use href="#link-icon" x="58" y="148" filter="url(#glow)"/>
+      <rect x="-8" y="0" width="25" height="200" rx="12" fill="url(#shineGrad)" class="shine-sweep" opacity="0" style="animation-delay:1s"/>
+      <rect x="0" y="160" width="128" height="10" rx="0 0 10 10" fill="url(#pyGrad)" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- ===== PROJECT 3: Driver Warning System (Jupyter) ===== -->
+  <g transform="translate(370, 50)">
+    <g class="cell-wrap c3">
+      <rect class="p-cell-bg" x="0" y="0" width="128" height="170" rx="10" filter="url(#dropShadow)"/>
+      <circle cx="64" cy="35" r="22" fill="url(#jupyterGrad)"/>
+      <text x="64" y="40" class="p-lang-text">JN</text>
+      <text x="64" y="78" class="p-name">Driver Warning</text>
+      <text x="64" y="90" class="p-name" style="font-size:9px">System</text>
+      <rect x="22" y="98" width="84" height="16" rx="8" fill="#f37726" opacity="0.6"/>
+      <text x="64" y="109" class="p-badge-text">Jupyter</text>
+      <text x="64" y="128" class="p-desc">ML driver drowsiness</text>
+      <text x="64" y="140" class="p-desc">detection system</text>
+      <use href="#link-icon" x="58" y="155" filter="url(#glow)"/>
+      <rect x="-8" y="0" width="25" height="200" rx="12" fill="url(#shineGrad)" class="shine-sweep" opacity="0" style="animation-delay:2s"/>
+      <rect x="0" y="160" width="128" height="10" rx="0 0 10 10" fill="url(#jupyterGrad)" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- ===== PROJECT 4: Fabs Dental Clinic (JavaScript) ===== -->
+  <g transform="translate(518, 50)">
+    <g class="cell-wrap c4">
+      <rect class="p-cell-bg" x="0" y="0" width="128" height="170" rx="10" filter="url(#dropShadow)"/>
+      <circle cx="64" cy="35" r="22" fill="url(#jsGrad)"/>
+      <text x="64" y="40" class="p-lang-text">JS</text>
+      <text x="64" y="78" class="p-name">Fabs Dental</text>
+      <text x="64" y="90" class="p-name" style="font-size:9px">Clinic</text>
+      <rect x="22" y="98" width="84" height="16" rx="8" fill="#b8a41a" opacity="0.6"/>
+      <text x="64" y="109" class="p-badge-text">JavaScript</text>
+      <text x="64" y="128" class="p-desc">Full-stack clinic</text>
+      <text x="64" y="140" class="p-desc">management web app</text>
+      <use href="#link-icon" x="58" y="155" filter="url(#glow)"/>
+      <rect x="-8" y="0" width="25" height="200" rx="12" fill="url(#shineGrad)" class="shine-sweep" opacity="0" style="animation-delay:3s"/>
+      <rect x="0" y="160" width="128" height="10" rx="0 0 10 10" fill="url(#jsGrad)" opacity="0.5"/>
+    </g>
+  </g>
+</svg>
